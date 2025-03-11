@@ -1,5 +1,9 @@
 import ProfileImage from "./ProfileImage.jsx";
+import Timestamp from "./Timestamp.jsx";
 import User from "./User.jsx";
+import Message from "./Message.jsx";
+import Actions from "./Actions.jsx";
+
 
 function Tweet(props) {
   return (
@@ -10,18 +14,15 @@ function Tweet(props) {
 
           <User name={props.oneTweet.user.name} handle={props.oneTweet.user.handle} />
   
-          <span className="timestamp">{props.oneTweet.timestamp}</span>
+          <Timestamp timestamp = {props.oneTweet.timestamp}/>
         </div>
 
-        <p className="message">{props.oneTweet.message}</p>
+         <Message message={props.oneTweet.message}/>
 
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment" data-testid="comment-icon"></i>
-          <i className="fas fa-retweet" data-testid="retweet-icon"></i>
-          <i className="far fa-heart" data-testid="heart-icon"></i>
-          <i className="fas fa-share" data-testid="share-icon"></i>
-        </div>
+        
+        <Actions />
+
+    
       </div>
 
       <i className="fas fa-ellipsis-h"></i>
@@ -30,3 +31,4 @@ function Tweet(props) {
 }
 
 export default Tweet;
+

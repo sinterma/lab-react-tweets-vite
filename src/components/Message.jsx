@@ -1,7 +1,9 @@
-import React from 'react'
-
-export const Message = () => {
+function Message(props) {
   return (
-    <div>Message</div>
-  )
+    <p className="message">
+      {props.message}
+    </p>
+  );
 }
+
+export default Message;
