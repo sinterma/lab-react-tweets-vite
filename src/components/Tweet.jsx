@@ -1,26 +1,19 @@
-function Tweet() {
+import ProfileImage from "./ProfileImage.jsx";
+import User from "./User.jsx";
+
+function Tweet(props) {
   return (
     <div className="tweet">
-      <img
-        src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/ih_logo.jpeg"
-        className="profile"
-        alt="profile"
-      />
-
-      <div className="body">
+      <ProfileImage imageUrl={props.oneTweet.user.image} />
+     <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">Ironhack</span>
-            <span className="handle">@ironhack</span>
-          </span>
 
-          <span className="timestamp">Nov 30, 2020</span>
+          <User name={props.oneTweet.user.name} handle={props.oneTweet.user.handle} />
+  
+          <span className="timestamp">{props.oneTweet.timestamp}</span>
         </div>
 
-        <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
-        </p>
+        <p className="message">{props.oneTweet.message}</p>
 
         <div className="actions">
           {/* Font Awesome icons */}
